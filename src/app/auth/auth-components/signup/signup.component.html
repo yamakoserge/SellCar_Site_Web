@@ -1,1 +1,61 @@
-<p>signup works!</p>
+<div class="bg" style="background-color: #F8F8F8;">
+    <nz-spin [nzSpinning]= "nzSpinning" [nzSize]="'large'" nzTip="Wordking...">
+        <div class="parent">
+            <div class="child">
+                <div nz-row class="imgDiv">
+                    <div nz-col nzspan="24">
+                        <h1 style="margin-left: 80px;">sign Up</h1>
+                    </div>
+                </div>
+                <form nz-form [formGroup]= "signupForm">
+
+                    <nz-form-item>
+                        <nz-form-control nzHasFeedback [nzErrorTip]= "userErrorTpl">
+                            <input nz-input placeholder="Name" id="username" formControlName="name"/>
+                            <ng-template #userErrorTpl let-control>
+                                <ng-container *ngIf= "control.hasError('required')">
+                                Please input your Username!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                     <nz-form-control nzHasFeedback nzErrorTip="The input is not valid E-mail!">
+                        <input nz-input placeholder="E-mail" id="email" formControlName="email">
+                     </nz-form-control>
+
+                     <nz-form-item>
+                        <nz-form-control nzHasFeedback [nzErrorTip]= "userErrorTpl">
+                            <input nz-input placeholder="Password" id="password" formControlName="password"/>
+                            <ng-template #userErrorTpl let-control>
+                                <ng-container *ngIf= "control.hasError('required')">
+                               password Is required
+                                </ng-container>
+                                <ng-container *ngIf= "control.hasError('pattern')">
+                                    le mot de passe doit contenir 8 caractères, 1 minuscule, 1 majuscule, 1 chiffre et 1 caractère spécial
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <nz-form-item>
+                        <nz-form-control nzHasFeedback [nzErrorTip]= "userErrorTpl">
+                            <input nz-input placeholder="ConfirmPassword" id="checkPassword" formControlName="passwordConfirm"/>
+                            <ng-template #userErrorTpl let-control>
+                                <ng-container *ngIf= "control.hasError('required')">
+                                    Please confirm your password
+                                </ng-container>
+                                <ng-container *ngIf= "control.hasError('pattern')">
+                                    Two passwords that you entre is inconsistent!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                     <button nz-button class="login-form-button login-form-margin" 
+                     [nzType]="'primary'" (click)= "signup()">Register</button>
+                     Or <a routerLink="/login">login now!</a>
+                </form>
+            </div>
+        </div>
+    </nz-spin>
+</div>
