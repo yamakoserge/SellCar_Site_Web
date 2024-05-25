@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -12,17 +13,30 @@ export class SignupComponent {
   nzSpinning: boolean = false;
 
 
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder,
+  private services: AuthService
+
+){
    this.signupForm = this.fb.group({
       name: [null, [Validators.required]],
       email: [null, [Validators.required,Validators.email]],
       password: [null, [Validators.required]],
-      confirmPassword: [null, [Validators.required]],
+      confirmPassword: [null, [Validators.required], this.confirmationValidator],
     })
+  }
+
+  confirmationValidator = (control : FormControl): { [s: string]: boolean} => {
+    if (!control.value)
+      return{ require: true };
+    else if (control.value !== this.signupForm.controls["password"].value)
+      return {confirm: true, error: true};
   }
 
   signup(){
     console.log(this.signupForm.value);
+    this.services.signup(this.signupForm.value).subscribe((res) =>{
+      console.log(res);
+    })
   }
   
 }
