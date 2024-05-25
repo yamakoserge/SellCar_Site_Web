@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="bg" style="background-color: #F8F8F8;">
+    <nz-spin [nzSpinning]= "nzSpinning" [nzSize]="'large'" nzTip="Wordking...">
+        <div class="parent">
+            <div class="child">
+                <div nz-row class="imgDiv">
+                    <div nz-col nzspan="24">
+                        <h1 style="margin-left: 50px;">Login</h1>
+                    </div>
+                </div>
+                <form nz-form [formGroup]= "loginForm">
+                   <nz-form-item>
+                     <nz-form-control nzHasFeedback nzErrorTip="The input is not valid E-mail!">
+                        <input nz-input placeholder="E-mail" id="email" formControlName="email">
+                     </nz-form-control>
+                    </nz-form-item>
+
+                     <nz-form-item>
+                        <nz-form-control nzHasFeedback [nzErrorTip]= "userErrorTpl">
+                            <input nz-input placeholder="Password" id="password" formControlName="password"/>
+                            <ng-template #userErrorTpl let-control>
+                                <ng-container *ngIf= "control.hasError('required')">
+                               password Is required
+                                </ng-container>
+                                <ng-container *ngIf= "control.hasError('pattern')">
+                                    le mot de passe doit contenir 8 caractères, 1 minuscule, 1 majuscule, 1 chiffre et 1 caractère spécial
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                     
+                     <button nz-button class="login-form-button login-form-margin" 
+                     [nzType]="'primary'" (click)= "login()">Login</button>
+                     Or <a routerLink="/signup">Register now!</a>
+                </form> 
+            </div>
+        </div>
+    </nz-spin>
+</div>

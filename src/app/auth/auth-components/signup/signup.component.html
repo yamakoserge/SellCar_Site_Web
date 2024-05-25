@@ -4,7 +4,7 @@
             <div class="child">
                 <div nz-row class="imgDiv">
                     <div nz-col nzspan="24">
-                        <h1 style="margin-left: 80px;">sign Up</h1>
+                        <h1 style="margin-left: 50px;">Sign Up</h1>
                     </div>
                 </div>
                 <form nz-form [formGroup]= "signupForm">
@@ -19,9 +19,12 @@
                             </ng-template>
                         </nz-form-control>
                     </nz-form-item>
+
+                    <nz-form-item>
                      <nz-form-control nzHasFeedback nzErrorTip="The input is not valid E-mail!">
                         <input nz-input placeholder="E-mail" id="email" formControlName="email">
                      </nz-form-control>
+                    </nz-form-item>
 
                      <nz-form-item>
                         <nz-form-control nzHasFeedback [nzErrorTip]= "userErrorTpl">
@@ -37,7 +40,7 @@
                         </nz-form-control>
                     </nz-form-item>
 
-                    <nz-form-item>
+                     <nz-form-item>
                         <nz-form-control nzHasFeedback [nzErrorTip]= "userErrorTpl">
                             <input nz-input placeholder="ConfirmPassword" id="checkPassword" formControlName="passwordConfirm"/>
                             <ng-template #userErrorTpl let-control>
@@ -54,7 +57,7 @@
                      <button nz-button class="login-form-button login-form-margin" 
                      [nzType]="'primary'" (click)= "signup()">Register</button>
                      Or <a routerLink="/login">login now!</a>
-                </form>
+                </form> 
             </div>
         </div>
     </nz-spin>
