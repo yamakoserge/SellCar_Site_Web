@@ -30,6 +30,7 @@ export class SignupComponent {
       return{ require: true };
     else if (control.value !== this.signupForm.controls["password"].value)
       return {confirm: true, error: true};
+    return{};
   }
 
   signup(){

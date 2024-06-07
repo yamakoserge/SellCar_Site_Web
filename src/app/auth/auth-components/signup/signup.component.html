@@ -28,7 +28,7 @@
 
                      <nz-form-item>
                         <nz-form-control nzHasFeedback [nzErrorTip]= "userErrorTpl">
-                            <input nz-input placeholder="Password" id="password" formControlName="password"/>
+                            <input nz-input placeholder="Password" id="password" formControlName="password" type="password"/>
                             <ng-template #userErrorTpl let-control>
                                 <ng-container *ngIf= "control.hasError('required')">
                                password Is required
@@ -42,7 +42,7 @@
 
                      <nz-form-item>
                         <nz-form-control nzHasFeedback [nzErrorTip]= "userErrorTpl">
-                            <input nz-input placeholder="ConfirmPassword" id="checkPassword" formControlName="passwordConfirm"/>
+                            <input nz-input placeholder="ConfirmPassword" id="checkPassword" formControlName="confirmPassword" type="password"/>
                             <ng-template #userErrorTpl let-control>
                                 <ng-container *ngIf= "control.hasError('required')">
                                     Please confirm your password
