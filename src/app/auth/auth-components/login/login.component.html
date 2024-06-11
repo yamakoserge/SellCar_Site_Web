@@ -1,5 +1,5 @@
 <div class="bg" style="background-color: #F8F8F8;">
-    <nz-spin [nzSpinning]= "nzSpinning" [nzSize]="'large'" nzTip="Wordking...">
+    <nz-spin [nzSpinning]= "isSpinning" [nzSize]="'large'" nzTip="Wordking...">
         <div class="parent">
             <div class="child">
                 <div nz-row class="imgDiv">
@@ -27,8 +27,6 @@
                             </ng-template>
                         </nz-form-control>
                     </nz-form-item>
-
-                     
                      <button nz-button class="login-form-button login-form-margin" 
                      [nzType]="'primary'" (click)= "login()">Login</button>
                      Or <a routerLink="/signup">Register now!</a>

@@ -36,7 +36,7 @@ if(res.userId != null) {
   const user = {
     id: res.userId,
     role: res.userRole
-  }
+  };
   StoragesService.saveUser(user);
   StoragesService.saveToken(res.jwt);
   if(StoragesService.isAdminLoggedIn())

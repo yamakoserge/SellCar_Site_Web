@@ -30,7 +30,7 @@ export class StoragesService {
 
   static getUserRole():string{
     const user=this.getUser();
-    if(user == null) return "";
+    if(user == null) return '';
     return user.role;
   }
 
@@ -45,6 +45,11 @@ export class StoragesService {
     return role === "CUSTOMER";
   }
 
+  static hasToken(): boolean {
+    if (this.getToken() === null) return false;
+    return true;
+  }
+  
   static getUserId(): string{
     const user = this.getUser();
     if(user == null) return"";
