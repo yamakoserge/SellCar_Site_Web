@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 const TOKEN = "token";
 const USER = "user";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +12,7 @@ export class StoragesService {
   constructor() { }
 
   static saveToken(token: string): void {
-    window.localStorage.removeItem(token);
+    window.localStorage.removeItem(TOKEN);
     window.localStorage.setItem(TOKEN, token);
   }
 
@@ -46,7 +47,8 @@ export class StoragesService {
   }
 
   static hasToken(): boolean {
-    if (this.getToken() === null) return false;
+    if (this.getToken() === null) 
+      return false;
     return true;
   }
   

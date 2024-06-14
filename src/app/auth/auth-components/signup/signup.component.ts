@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth/auth.service';
 import { Router } from '@angular/router';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'app-signup',
@@ -16,8 +17,8 @@ export class SignupComponent {
 
   constructor(private fb: FormBuilder,
   private services: AuthService,
-  private router: Router
-
+  private router: Router,
+  private notification: NzNotificationService
 ){
    this.signupForm = this.fb.group({
       name: [null, [Validators.required]],
