@@ -17,6 +17,7 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { DemoNgZorroAntdModule } from './DemoNgZorroAntModule';
+import { PostCarComponent } from './post.car/post.car.component';
 
 registerLocaleData(en);
 
@@ -24,7 +25,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    PostCarComponent
   ],
   imports: [
     BrowserModule,
