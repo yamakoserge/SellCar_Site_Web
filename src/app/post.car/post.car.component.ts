@@ -3,6 +3,7 @@ import { CustomerService } from '../modules/customer/services/customer.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { Router } from '@angular/router';
+import { BooleanInput } from 'ng-zorro-antd/core/types';
 
 @Component({
   selector: 'app-post.car',
@@ -16,11 +17,12 @@ export class PostCarComponent {
   listOfColor =["Red","White","Blue", "Black","Orange","Yellow","Grey", "Silver", "Autre..."];
   listOfTransmission = ["Manuel","Automatic"];
   postCarForm: FormGroup;
+  isSpinning : BooleanInput = false;
 
   constructor(private service: CustomerService,
   private fb: FormBuilder,
   private router: Router,
-  private massege: NzMessageService
+  private message: NzMessageService
   ){}
 
   ngOnInit(){
@@ -35,7 +37,7 @@ export class PostCarComponent {
       price:[null, [Validators.required]],
     })
   };
-  postCae(){
+  postCar(){
     console.log(this.postCarForm.value);
   }
 
