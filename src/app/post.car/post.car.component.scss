@@ -9,7 +9,7 @@
 .child {
   padding: 50px;
   width: 100px;
-  max-width: 600px;
+  max-width: 680px;
   background-color: white;
   box-shadow: 1px 1px 15px -7px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -27,8 +27,8 @@
 }
 
 .profile {
-  height: 100vh;
-  height: 35px;
+  height: 180px;
+  width: 180px;
   margin-bottom: 5px;
   object-fit: cover;
   border-radius: 50%;
@@ -38,9 +38,9 @@
   cursor: pointer;
 }
 
-.upoald-icon {
+.upload-icon {
   width: 70px;
-  height: 15px;
+  height: 35px;
   margin-top: 10px;
 }
 

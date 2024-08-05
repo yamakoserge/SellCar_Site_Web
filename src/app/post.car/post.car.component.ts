@@ -8,7 +8,7 @@ import { BooleanInput } from 'ng-zorro-antd/core/types';
 @Component({
   selector: 'app-post.car',
   templateUrl: './post.car.component.html',
-  styleUrl: './post.car.component.scss'
+  styleUrls: ['./post.car.component.scss']
 })
 export class PostCarComponent {
 
