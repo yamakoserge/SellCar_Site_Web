@@ -13,7 +13,7 @@ import { AuthService } from '../services/auth/auth.service';
 export class LoginComponent {
 
   loginForm!:FormGroup;
-  isSpinning: boolean;
+  isSpinning: boolean =false;
  
 
 

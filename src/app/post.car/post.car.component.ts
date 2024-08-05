@@ -17,7 +17,9 @@ export class PostCarComponent {
   listOfColor =["Red","White","Blue", "Black","Orange","Yellow","Grey", "Silver", "Autre..."];
   listOfTransmission = ["Manuel","Automatic"];
   postCarForm: FormGroup;
-  isSpinning : BooleanInput = false;
+  isSpinning : boolean = false;
+  selectedFile: File | null;
+  imagePreview: string | ArrayBuffer | null;
 
   constructor(private service: CustomerService,
   private fb: FormBuilder,
@@ -39,6 +41,19 @@ export class PostCarComponent {
   };
   postCar(){
     console.log(this.postCarForm.value);
+    console.log(this.selectedFile);
+  }
+
+  onFileSelected(event:any){
+    this.selectedFile = event.target.files [0];
+    this.previewImage();
+  }
+  previewImage(){
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imagePreview = reader.result;
+    };
+    reader.readAsDataURL(this.selectedFile);
   }
 
 

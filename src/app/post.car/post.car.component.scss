@@ -1,50 +1,51 @@
-.parent {
+
+.parent{
   width: 100%;
-  min-height: 100vh;
+  height: 91vh;
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.child {
+.child{
   padding: 50px;
-  width: 100px;
+  width: 500px;
   max-width: 680px;
   background-color: white;
-  box-shadow: 1px 1px 15px -7px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 15 -7px rgba(0,0,0,0.1);
+  border: 5px;
+  margin-bottom: 22px;
   border-radius: 5px;
+  border: 2px solid blue;
 }
-.imgDiv {
+
+.imgDiv{
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
 }
-
-.profile-badge {
+.profile-badge{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.profile {
+.profile{
   height: 180px;
   width: 180px;
   margin-bottom: 5px;
   object-fit: cover;
   border-radius: 50%;
 }
-
-.upload-label {
+.upload-label{
   cursor: pointer;
 }
-
-.upload-icon {
+.upload-icon{
   width: 70px;
   height: 35px;
-  margin-top: 10px;
+  margin: 10px;
 }
 
-.login-form-button {
+ .login-form-button {
   margin-top: 20px;
   width: 100%;
-}
+ }
