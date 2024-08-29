@@ -7,11 +7,13 @@ import { DemoNgZorroAntdModule } from '../../DemoNgZorroAntModule';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { PostCarComponent } from './components/post-car/post-car.component';
 
 
 @NgModule({
   declarations: [
-    CustomerDashboardComponent
+    CustomerDashboardComponent,
+    PostCarComponent
   ],
   imports: [
     CommonModule,
