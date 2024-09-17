@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { StoragesService } from '../../../auth/auth-components/services/storages/storages.service';
 
-const BASE_URL = "http://localhost:8091/";
+const BASE_URL = "http://localhost:8090/"
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +16,7 @@ export class CustomerService {
       headers: this.createAuthorizationHeader()
     })
   }
+
   createAuthorizationHeader(): HttpHeaders{
     let authHeaders: HttpHeaders = new HttpHeaders();
     return authHeaders.set(

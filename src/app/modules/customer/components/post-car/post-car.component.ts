@@ -41,6 +41,7 @@ export class PostCarComponent {
       price:[null, [Validators.required]],
     })
   };
+  
   postCar(){
     this.isSpinning =true;
     console.log(this.postCarForm.value);
@@ -58,12 +59,12 @@ export class PostCarComponent {
     formData.append("price", this.postCarForm.get('price').value);
     formData.append("userId", StoragesService.getUserId());
 
-    this.service.postCar(formData).subscribe((res)=>{
+    this.service.postCar(formData).subscribe(res=>{
       this.isSpinning=false;
-      this.message.success("Car posted successfully", {nzDuration:3000});
+      this.message.success("Car posted successfully", {nzDuration:5000});
       this.router.navigateByUrl("/customer/dashboard");
     }, error =>{
-      this.message.error("Something went wrong", {nzDuration:3000})
+      this.message.error("Something went wrong", {nzDuration:5000})
     })
   }
 
