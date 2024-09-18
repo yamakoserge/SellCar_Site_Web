@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CustomerService } from '../../services/customer.service';
 
 @Component({
   selector: 'app-customer-dashboard',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class CustomerDashboardComponent {
 
+  cars:any=[];
+
+  constructor(private service:CustomerService){}
+
+  ngOnInit(){
+    this.getCars();
+  }
+
+  getCars(){
+    this.service.getAllCars().subscribe((res) =>{
+      console.log(res);
+      this.cars = res;
+    })
+  }
 }
