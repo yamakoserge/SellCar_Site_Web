@@ -29,6 +29,12 @@ export class CustomerService {
     })
   }
 
+  deleteCar(id:number): Observable<any>{
+    return this.http.delete(BASE_URL + 'api/customer/my-cars/${id}',  {
+      headers: this.createAuthorizationHeader()
+    })
+  }
+
   createAuthorizationHeader(): HttpHeaders{
     let authHeaders: HttpHeaders = new HttpHeaders();
     return authHeaders.set(
