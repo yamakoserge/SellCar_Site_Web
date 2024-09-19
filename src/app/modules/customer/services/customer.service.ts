@@ -35,6 +35,12 @@ export class CustomerService {
     })
   }
 
+  getCarById(id:number): Observable<any>{
+    return this.http.get(BASE_URL + 'api/customer/car/${id}',  {
+      headers: this.createAuthorizationHeader()
+    })
+  }
+
   createAuthorizationHeader(): HttpHeaders{
     let authHeaders: HttpHeaders = new HttpHeaders();
     return authHeaders.set(

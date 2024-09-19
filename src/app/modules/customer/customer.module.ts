@@ -9,13 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { PostCarComponent } from './components/post-car/post-car.component';
 import { MyCarsComponent } from './components/my-cars/my-cars.component';
+import { UpdateCarComponent } from './components/update-car/update-car.component';
 
 
 @NgModule({
   declarations: [
     CustomerDashboardComponent,
     PostCarComponent,
-    MyCarsComponent
+    MyCarsComponent,
+    UpdateCarComponent
   ],
   imports: [
     CommonModule,

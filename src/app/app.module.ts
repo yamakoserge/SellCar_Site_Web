@@ -18,6 +18,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { DemoNgZorroAntdModule } from './DemoNgZorroAntModule';
 
+
 registerLocaleData(en);
 
 @NgModule({
