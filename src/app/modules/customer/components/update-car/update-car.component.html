@@ -8,6 +8,12 @@
         <form nz-form [formGroup]="updateCarForm" (ngSubmit)="updateCar()">
           <div nz-row>
             <div class="file-update-container">
+
+                <label class="file-update-label">
+                    <span style="margin-left: 100px;">Select a File</span>
+                    <input type="file" nz-button nzType="primary" accept="image/x-png,image/gif,image/jpeg" (change)="onFileSelected($event)"/>
+                </label>
+              
               <div *ngIf="existingImage" class="image-preview">
                 <div class="circle-image">
                   <img
