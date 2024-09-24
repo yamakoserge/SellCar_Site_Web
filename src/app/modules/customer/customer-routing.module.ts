@@ -4,6 +4,7 @@ import { CustomerDashboardComponent } from './components/customer-dashboard/cust
  import { PostCarComponent } from './components/post-car/post-car.component';
 import { MyCarsComponent } from './components/my-cars/my-cars.component';
 import { UpdateCarComponent } from './components/update-car/update-car.component';
+import { BookACarComponent } from './components/book-a-car/book-a-car.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: "post-car", component: PostCarComponent},
   {path: "my-cars", component: MyCarsComponent},
   {path: "car/edit/:id", component: UpdateCarComponent},
+  {path: "car/:id/book", component: BookACarComponent},
 ];
 
 @NgModule({
