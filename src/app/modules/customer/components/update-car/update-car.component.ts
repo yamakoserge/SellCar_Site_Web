@@ -12,7 +12,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 })
 export class UpdateCarComponent {
   id: number = this.activatedRoute.snapshot.params['id'];
-  car: any;
   existingImage: string | null = null;
 
   listOfMarque = [
@@ -76,7 +75,6 @@ export class UpdateCarComponent {
   getCar() {
     this.service.getCarById(this.id).subscribe((res) => {
       console.log(res);
-      this.car = res;
       this.existingImage = `data:image/jpeg;base64,` + res.returnedImg;
       this.updateCarForm.patchValue(res);
     });
