@@ -49,6 +49,7 @@ export class UpdateCarComponent {
   selectedFile: File | null;
   imagePreview: string | ArrayBuffer | null;
   imgChanged: boolean = false;
+  
 
   constructor(
     private service: CustomerService,
