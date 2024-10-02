@@ -7,17 +7,17 @@ import { CustomerService } from '../../services/customer.service';
   styleUrls: ['./view-my-bids.component.scss',]
 })
 export class ViewMyBidsComponent {
-  bids: any = [];
+  bids: any;
   isSpinning: boolean = false;
 
 
   constructor(private service: CustomerService) {}
 
   ngOnInit() {
-    this.getMybids();
+    this.getMyBids();
   }
 
-  getMybids() {
+  getMyBids() {
     this.isSpinning = true;
     this.service.getMyBids().subscribe((res) => {
       this.isSpinning = false;
