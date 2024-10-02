@@ -11,6 +11,7 @@ import { PostCarComponent } from './components/post-car/post-car.component';
 import { MyCarsComponent } from './components/my-cars/my-cars.component';
 import { UpdateCarComponent } from './components/update-car/update-car.component';
 import { BookACarComponent } from './components/book-a-car/book-a-car.component';
+import { ViewMyBidsComponent } from './components/view-my-bids/view-my-bids.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { BookACarComponent } from './components/book-a-car/book-a-car.component'
     PostCarComponent,
     MyCarsComponent,
     UpdateCarComponent,
-    BookACarComponent
+    BookACarComponent,
+    ViewMyBidsComponent
   ],
   imports: [
     CommonModule,
