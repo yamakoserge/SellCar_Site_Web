@@ -1,42 +1,44 @@
 <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
-    <div style="padding: 20px">
-      <nz-table
-        #basicTable
-        [nzData]="bids"
-        [nzPageSize]="20"
-        nzShowPagination="'false'"
-      >
-        <thead>
-          <tr>
-            <th style="font-weight: bolder; color: #003973">Car Name</th>
-            <th style="font-weight: bolder; color: #003973">Car Marque</th>
-            <th style="font-weight: bolder; color: #003973">Seller Name</th>
-            <th style="font-weight: bolder; color: #003973">Price</th>
-            <th style="font-weight: bolder; color: #003973">Status</th>
-          </tr>
-        </thead>
-  
-        <tbody>
-          <tr *ngFor="let booking of basicTable.data">
-            <td>{{ booking.carName }}</td>
-            <td>{{ booking.carMarque }}</td>
-            <td>{{ booking.sellerName }}</td>
-            <td>{{ booking.price }}</td>
-          </tr>
-          <strong
-            [ngStyle]="{
-              'color':
-                booking.bidStatus === 'APPROVED'
-                  ? 'green'
-                  : booking.bidStatus === 'REJETED'
-                  ? 'blue'
-                  : 'red'
-            }"
-          >
-            {{ booking.bidStatus }}
-          </strong>
-        </tbody>
-      </nz-table>
-    </div>
-  </nz-spin>
-  
+  <div style="padding: 20px">
+    <nz-table
+      #basicTable
+      [nzData]="bids"
+      [nzPageSize]="20"
+      nzShowPagination="'false'"
+    >
+      <thead>
+        <tr>
+          <th style="font-weight: bolder; color: #003973">Car Name</th>
+          <th style="font-weight: bolder; color: #003973">Car Marque</th>
+          <th style="font-weight: bolder; color: #003973">Seller Name</th>
+          <th style="font-weight: bolder; color: #003973">Price</th>
+          <th style="font-weight: bolder; color: #003973">Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let booking of basicTable.data">
+          <td>{{ booking.carName }}</td>
+          <td>{{ booking.carMarque }}</td>
+          <td>{{ booking.sellerName }}</td>
+          <td>{{ booking.price }}</td>
+
+          <td>
+            <strong
+              [ngStyle]="{
+                color:
+                  booking.bidStatus === 'APPROVED'
+                    ? 'green'
+                    : booking.bidStatus === 'REJETED'
+                    ? 'blue'
+                    : 'red'
+              }"
+            >
+              {{ booking.bidStatus }}
+            </strong>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</nz-spin>
