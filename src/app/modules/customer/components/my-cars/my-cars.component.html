@@ -27,6 +27,15 @@
             nzSize="small"
             nz-button
             nzType="primary"
+            routerLink="/customer/manage-bids/{car.id}/{{ car.id }}"
+            style="margin-right: 10px"
+          >
+            Manage bids
+          </button>
+          <button
+            nzSize="small"
+            nz-button
+            nzType="primary"
             routerLink="/customer/car/edit/{{ car.id }}"
           >
             Update

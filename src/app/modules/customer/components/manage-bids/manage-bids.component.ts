@@ -1,19 +1,22 @@
 import { Component } from '@angular/core';
-import { CustomerService } from '../../services/customer.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { CustomerService } from '../../services/customer.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-view-my-bids',
-  templateUrl: './view-my-bids.component.html',
-  styleUrls: ['./view-my-bids.component.scss'],
+  selector: 'app-manage-bids',
+  templateUrl: './manage-bids.component.html',
+  styleUrl: './manage-bids.component.scss'
 })
-export class ViewMyBidsComponent {
+export class ManageBidsComponent {
+  cardId:number=this.activatedRoute.snapshot.params['id'];
   bids: any;
   isSpinning: boolean = false;
 
   constructor(
     private service: CustomerService,
-    private message: NzMessageService
+    private message: NzMessageService,
+    private activatedRoute: ActivatedRoute,
   ) {}
 
   ngOnInit() {
@@ -22,7 +25,7 @@ export class ViewMyBidsComponent {
 
   getMyBids() {
     this.isSpinning = true;
-    this.service.getMyBids().subscribe((res) => {
+    this.service.getBidsByCarId(this.cardId).subscribe((res) => {
       this.isSpinning = false;
       console.log(res);
       this.bids = res;

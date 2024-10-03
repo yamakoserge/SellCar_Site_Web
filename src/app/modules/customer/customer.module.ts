@@ -12,6 +12,7 @@ import { MyCarsComponent } from './components/my-cars/my-cars.component';
 import { UpdateCarComponent } from './components/update-car/update-car.component';
 import { BookACarComponent } from './components/book-a-car/book-a-car.component';
 import { ViewMyBidsComponent } from './components/view-my-bids/view-my-bids.component';
+import { ManageBidsComponent } from './components/manage-bids/manage-bids.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ViewMyBidsComponent } from './components/view-my-bids/view-my-bids.comp
     MyCarsComponent,
     UpdateCarComponent,
     BookACarComponent,
-    ViewMyBidsComponent
+    ViewMyBidsComponent,
+    ManageBidsComponent
   ],
   imports: [
     CommonModule,
