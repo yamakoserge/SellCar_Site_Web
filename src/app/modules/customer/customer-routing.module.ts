@@ -7,6 +7,7 @@ import { UpdateCarComponent } from './components/update-car/update-car.component
 import { BookACarComponent } from './components/book-a-car/book-a-car.component';
 import { ViewMyBidsComponent } from './components/view-my-bids/view-my-bids.component';
 import { ManageBidsComponent } from './components/manage-bids/manage-bids.component';
+import { SearchCarComponent } from './components/search-car/search-car.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: "car/:id/book", component: BookACarComponent},
   {path: "my-bids", component: ViewMyBidsComponent},
   {path: "manage-bids/:id", component: ManageBidsComponent},
+  {path: "search-car", component: SearchCarComponent},
 ];
 
 @NgModule({
