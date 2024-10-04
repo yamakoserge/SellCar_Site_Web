@@ -69,6 +69,12 @@ export class CustomerService {
     });
   }
 
+  searchCar(searchDto: any): Observable<any> {
+    return this.http.post(BASE_URL + 'api/customer/car/bid', searchDto, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
   updateBidStatus(bidId: number, status: string): Observable<any> {
     return this.http.get(BASE_URL + 'api/customer/car/bid/${bidId}/${status}', {
       headers: this.createAuthorizationHeader(),
