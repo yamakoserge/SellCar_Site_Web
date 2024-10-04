@@ -70,7 +70,7 @@ export class CustomerService {
   }
 
   searchCar(searchDto: any): Observable<any> {
-    return this.http.post(BASE_URL + 'api/customer/car/bid', searchDto, {
+    return this.http.post(BASE_URL + 'api/customer/car/search', searchDto, {
       headers: this.createAuthorizationHeader(),
     });
   }

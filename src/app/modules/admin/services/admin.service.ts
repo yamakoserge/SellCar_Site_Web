@@ -31,4 +31,10 @@ export class AdminService {
       'Bearer ' + StoragesService.getToken()
     )
   }
+
+  searchCar(searchDto: any): Observable<any> {
+    return this.http.post(BASE_URL + 'api/admin/car/search', searchDto, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
 }
